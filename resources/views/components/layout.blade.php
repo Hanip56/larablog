@@ -32,7 +32,6 @@
     <body class="font-inter">
         @include('partials/_navbar')
         {{ $slot }}
-        @include('partials/_footer')
     </body>
 
 </html>

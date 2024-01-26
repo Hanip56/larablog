@@ -1,17 +1,17 @@
 <div class="w-full">
     <x-container class="flex items-center justify-between py-4">
         {{-- logo --}}
-        <div class="flex gap-2 items-center">
+        <a href="/" class="flex gap-2 items-center cursor-pointer">
             <i class="fa-solid fa-hippo text-2xl"></i>
             <span class="font-bold text-lg">Larablog</span>
-        </div>
-        <div class="flex gap-4">
-            <button class="transition hover:text-orange-500">
-                <i class="fa-solid fa-user-plus"></i> Register
-            </button>
-            <button class="transition hover:text-orange-500">
+        </a>
+        <div class="flex items-center gap-4">
+            <a href="/register" class="transition hover:text-blue-500 cursor-pointer flex items-center gap-1">
+                <i class="fa-solid fa-address-card"></i> Register
+            </a>
+            <a href="/login" class="transition hover:text-blue-500 cursor-pointer flex items-center gap-1">
                 <i class="fa-solid fa-right-to-bracket"></i> Login
-            </button>
+            </a>
         </div>
     </x-container>
 </div>

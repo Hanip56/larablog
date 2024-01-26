@@ -13,4 +13,5 @@
     </x-container>
 
     @include('partials/_subscribe')
+    @include('partials/_footer')
 </x-layout>
