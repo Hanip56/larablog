@@ -35,5 +35,8 @@ Route::view('/register', 'auth.register');
 
 
 Route::controller(PostController::class)->group(function() {
+    Route::get('/posts/create', 'create');
+
     Route::get('/posts/{id}', 'show');
+
 }); 
