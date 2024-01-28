@@ -12,13 +12,14 @@
                     <h1 class="font-semibold text-2xl mb-1">Register your account Now</h1>
                     <p class="text-gray-500">Create an account to start post an article</p>
                 </div>
-                <form action="" class="my-4 w-full flex flex-col gap-2">
+                <form action="/register" method="POST" class="my-4 w-full flex flex-col gap-2">
+                    @csrf
                     <x-input name="name" label="Name" iconClass="fa-solid fa-user" placeholder="Enter name" />
                     <x-input name="email" label="Email" iconClass="fa-solid fa-envelope" placeholder="Enter email" />
-                    <x-input name="password" label="Password" iconClass="fa-solid fa-user-lock"
+                    <x-input type="password" name="password" label="Password" iconClass="fa-solid fa-user-lock"
                         placeholder="Enter password" />
-                    <x-input name="password_confirmation" label="Confirm password" iconClass="fa-solid fa-lock"
-                        placeholder="Confirm password" />
+                    <x-input type="password" name="password_confirmation" label="Confirm password"
+                        iconClass="fa-solid fa-lock" placeholder="Confirm password" />
                     <button
                         class="py-2 px-6 rounded-full bg-black hover:opacity-80 font-semibold text-white mt-4 self-center">Register
                         <i class="fa-solid fa-arrow-right ml-2"></i></button>

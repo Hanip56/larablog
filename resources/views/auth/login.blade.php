@@ -12,9 +12,10 @@
                     <h1 class="font-semibold text-2xl mb-1">Login</h1>
                     <p class="text-gray-500">Welcome back, start post an amazing article</p>
                 </div>
-                <form action="" class="my-4 w-full flex flex-col gap-2">
+                <form action="/login" method="POST" class="my-4 w-full flex flex-col gap-2">
+                    @csrf
                     <x-input name="email" label="Email" iconClass="fa-solid fa-envelope" placeholder="Enter email" />
-                    <x-input name="password" label="Password" iconClass="fa-solid fa-user-lock"
+                    <x-input type="password" name="password" label="Password" iconClass="fa-solid fa-user-lock"
                         placeholder="Enter password" />
                     <button
                         class="py-2 px-6 rounded-full bg-black hover:opacity-80 font-semibold text-white mt-4 self-center">Login
