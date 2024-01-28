@@ -48,4 +48,5 @@ Route::controller(PostController::class)->group(function() {
 
     Route::get('/posts/{id}', 'show');
 
+    Route::post('/posts/create', 'store');
 }); 
