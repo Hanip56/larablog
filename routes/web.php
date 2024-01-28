@@ -25,10 +25,6 @@ use Illuminate\Support\Facades\Route;
 // update - Update listing
 // destroy - Delete listing  
 
-Route::get('/', function () {
-    return view('index');
-});
-
 // auth
 Route::view('/login', 'auth.login')->middleware('guest');
 
@@ -44,9 +40,12 @@ Route::controller(AuthController::class)->group(function() {
 
 
 Route::controller(PostController::class)->group(function() {
+    Route::get('/', 'index');
+
     Route::get('/posts/create', 'create')->middleware('auth');
 
-    Route::get('/posts/{id}', 'show');
-
     Route::post('/posts/create', 'store')->middleware('auth');
+    
+    Route::get('/posts/{post}', 'show');
+
 }); 

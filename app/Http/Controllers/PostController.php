@@ -7,9 +7,15 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+
+    // get all post / home
+    public function index(Request $request) {
+        return view('posts.index', ['posts' => Post::all()]);
+    }
+
     // get post detail
-    public function show(Request $request, int $id) {
-        return view('posts.show');
+    public function show(Request $request, Post $post) {
+        return view('posts.show', ['post' => $post]);
     }
 
     // show create form post
@@ -34,7 +40,9 @@ class PostController extends Controller
 
         Post::create($formFields);
 
-        // store to db
-        return redirect('/')->with('message', 'Post uploaded');
+        // session()->regenerate();
+
+        // session()->flash('message', "Post uploaded");
+        return redirect('/');
     }
 }

@@ -57,7 +57,10 @@ class AuthController extends Controller
      
         $request->session()->regenerateToken();
      
-        return redirect('/')->with('message', "Logged out");
+        // return redirect('/')->with('message', "Logged out");
+
+        session()->flash('message', "Logged out");
+        return redirect('/');
 
     }
 }
