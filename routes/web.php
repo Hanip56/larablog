@@ -30,23 +30,23 @@ Route::get('/', function () {
 });
 
 // auth
-Route::view('/login', 'auth.login');
+Route::view('/login', 'auth.login')->middleware('guest');
 
-Route::view('/register', 'auth.register');
+Route::view('/register', 'auth.register')->middleware('guest');
 
 Route::controller(AuthController::class)->group(function() {
-    Route::post('/login', 'login');
+    Route::post('/login', 'login')->name('login')->middleware('guest');
 
-    Route::post('/register', 'register');
+    Route::post('/register', 'register')->middleware('guest');
 
-    Route::post('/logout', 'logout');
+    Route::post('/logout', 'logout')->middleware('auth');
 });
 
 
 Route::controller(PostController::class)->group(function() {
-    Route::get('/posts/create', 'create');
+    Route::get('/posts/create', 'create')->middleware('auth');
 
     Route::get('/posts/{id}', 'show');
 
-    Route::post('/posts/create', 'store');
+    Route::post('/posts/create', 'store')->middleware('auth');
 }); 
