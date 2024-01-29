@@ -11,7 +11,7 @@ class PostController extends Controller
 
     // get all post / home
     public function index(Request $request) {
-        return view('posts.index', ['posts' => Post::all()]);
+        return view('posts.index', ['posts' => Post::latest()->filter(request(['category', 'search']))->get()]);
     }
 
     // get post detail
