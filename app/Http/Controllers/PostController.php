@@ -17,8 +17,11 @@ class PostController extends Controller
 
     // get post detail
     public function show(Request $request, Post $post) {
+        // currently just the oldest 
+        $mostPopularPost = Post::oldest()->take(4)->get(); 
+
         $post->description = Str::markdown($post->description);
-        return view('posts.show', ['post' => $post]);
+        return view('posts.show', ['post' => $post, 'mostPopular' => $mostPopularPost]);
     }
 
     // show create form post
