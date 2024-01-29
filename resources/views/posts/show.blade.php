@@ -27,7 +27,7 @@
         {{-- desc --}}
         <div class="flex gap-12 my-10">
             <div class="flex-1 text-justify space-y-6">
-                <p>{{ $post->description }}</p>
+                <div class="prose max-w-full">{!! $post->description !!}</div>
             </div>
             <div class="hidden md:flex basis-[30%] flex-col gap-y-8">
                 <div>

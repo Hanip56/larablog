@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -16,6 +17,7 @@ class PostController extends Controller
 
     // get post detail
     public function show(Request $request, Post $post) {
+        $post->description = Str::markdown($post->description);
         return view('posts.show', ['post' => $post]);
     }
 

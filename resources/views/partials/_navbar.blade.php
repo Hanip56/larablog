@@ -26,7 +26,9 @@
                     </button>
                 </form>
                 <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-gray-500 rounded-full"></div>
+                    <div class="w-8 h-8 rounded-full overflow-hidden border">
+                        <img src="{{ asset('images/user-default.jpg') }}" alt="user-default">
+                    </div>
                     <p class="font-semibold">{{ auth()->user()->name }}</p>
                 </div>
             @else
