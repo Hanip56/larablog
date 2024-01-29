@@ -18,6 +18,14 @@ const editor = new Editor({
 
 const createPostForm = document.getElementById("create-post-form");
 
+document.addEventListener("DOMContentLoaded", function () {
+    const preDescription = createPostForm.querySelector("#description").value;
+
+    if (preDescription) {
+        editor.setMarkdown(preDescription);
+    }
+});
+
 createPostForm.addEventListener("submit", function (e) {
     e.preventDefault();
     createPostForm.querySelector("#description").value = editor.getMarkdown();

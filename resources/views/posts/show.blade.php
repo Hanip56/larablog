@@ -1,3 +1,8 @@
+@php
+    $date = strtotime($post->created_at);
+    $date = date('d.m.y', $date);
+@endphp
+
 <x-layout>
     <x-container>
         <div class="flex flex-col md:flex-row items-center gap-8 my-10">
@@ -8,8 +13,8 @@
                         <img src="{{ asset('images/avatar.jpg') }}" alt="">
                     </div>
                     <div>
-                        <p class="font-semibold">Kazuha</p>
-                        <small class="font-medium">26.01.2024</small>
+                        <p class="font-semibold">{{ $post->user->name }}</p>
+                        <small class="font-medium">{{ $date }}</small>
                     </div>
                 </div>
             </div>

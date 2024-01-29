@@ -6,9 +6,13 @@
 <a href="/posts/{{ $post->id }}">
     <div class="flex flex-col gap-4 cursor-pointer">
         {{-- image --}}
-        <div class="w-full h-80 rounded-3xl overflow-hidden hover:opacity-80 transition">
+        <div class="w-full relative h-80 rounded-3xl overflow-hidden hover:opacity-80 transition">
             <img src="{{ $post->thumbnail ? '/storage/' . $post->thumbnail : asset('images/truck.jpg') }}" alt=""
                 class="w-full h-full object-cover">
+
+            {{-- badge category --}}
+            <div class="absolute top-5 right-5 px-2 py-1 text-xs font-semibold text-white rounded-full bg-blue-300">
+                {{ $post->category }}</div>
         </div>
         {{-- desc --}}
         <div class="flex flex-col gap-2 hover:opacity-80 transition">
